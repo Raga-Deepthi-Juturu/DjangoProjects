@@ -1,35 +1,40 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
     My Blog
 {% endblock %}
 
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+{% endblock %}
+
 {% block content %}
     <header id="main-navigation">
-    </h1><a href =""> Deepthi's blog </a></h1>
-    <nav> 
-        <a href =""> All posts </a>
-    </nav>
+        <h1><a href="">Deepthi's Blog</a></h1>
+        <nav> 
+            <a href="">All Posts</a>
+        </nav>
     </header>
 
-    <section id ="welcome">
+    <section id="welcome">
         <header>
-            <img src ="" alt = "Deepthi - The author of this blog"/>
-            <h2> Deepthi's blog </h2>
+            <img src="" alt="Deepthi - The author of this blog"/>
+            <h2>Welcome to Deepthi's Blog</h2>
         </header>
-        <p>Hi, Iam Deepthi and I love to blog about my personal interests and the way our mind works</p>
+        <p>Hi, I am Deepthi, and I love to blog about my personal interests and the way our mind works.</p>
     </section>
     
     <section id="latest-posts">
-        <h2>My latest Thoughts</h2>
+        <h2>My Latest Thoughts</h2>
         <ul>
             <li>
-                <article class ='post'>
-                    <a href ="">
-                        <img src ="" alt ="yoga"/>
-                        <div class ="post__content">
-                            <h3> yoga </h3>
-                            <p>Yoga is a very important activity to do in our daily lives to keep our boday and mind healthy and active.</p>
+                <article class="post">
+                    <a href="">
+                        <img src="" alt="Yoga"/>
+                        <div class="post__content">
+                            <h3>Yoga</h3>
+                            <p>Yoga is a very important activity to include in our daily lives to keep our body and mind healthy and active.</p>
                         </div>
                     </a>       
                 </article>
@@ -37,16 +42,13 @@
         </ul>
     </section>
 
-    <section id = "about">
+    <section id="about">
         <h2>What I Do</h2>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis nihil distinctio reprehenderit ullam expedita minus eaque nobis libero culpa, iure exercitationem atque eligendi qui doloribus ratione nulla maiores est dicta.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis nihil distinctio reprehenderit ullam expedita minus eaque nobis libero culpa iure exercitationem atque eligendi qui doloribus ratione nulla maiores est dicta.
         </p>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat sint impedit nulla nihil quod libero voluptatem molestias laborum magni dolorum obcaecati rem eligendi, non neque mollitia similique sed. Laborum, debitis.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat sint impedit nulla nihil quod libero voluptatem molestias laborum magni dolorum obcaecati rem eligendi, non neque mollitia similique sed. Laborum, debitis.
         </p>
     </section>
-
-
-{% endblock %}
 {% endblock %}
