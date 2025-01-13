@@ -51,3 +51,26 @@ button {
 button:hover {
     background-color: #45a049;
 }
+/* Header Styles */
+header#main-navigation {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+header#main-navigation h1 a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+header#main-navigation nav a {
+    margin: 0 10px;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+header#main-navigation nav a:hover {
+    text-decoration: underline;
+}

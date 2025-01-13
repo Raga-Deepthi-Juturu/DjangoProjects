@@ -6,20 +6,15 @@
 {% endblock %}
 
 {% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/post.css' %}">
     <link rel="stylesheet" href="{% static 'blog/index.css' %}">
 {% endblock %}
 
 {% block content %}
-    <header id="main-navigation">
-        <h1><a href="">Deepthi's Blog</a></h1>
-        <nav> 
-            <a href="">All Posts</a>
-        </nav>
-    </header>
 
     <section id="welcome">
         <header>
-            <img src="" alt="Deepthi - The author of this blog"/>
+            <img src="{% static 'blog/images/Deepthi.jpeg' %}" alt="Deepthi - The author of this blog"/>
             <h2>Welcome to Deepthi's Blog</h2>
         </header>
         <p>Hi, I am Deepthi, and I love to blog about my personal interests and the way our mind works.</p>
@@ -28,17 +23,7 @@
     <section id="latest-posts">
         <h2>My Latest Thoughts</h2>
         <ul>
-            <li>
-                <article class="post">
-                    <a href="">
-                        <img src="" alt="Yoga"/>
-                        <div class="post__content">
-                            <h3>Yoga</h3>
-                            <p>Yoga is a very important activity to include in our daily lives to keep our body and mind healthy and active.</p>
-                        </div>
-                    </a>       
-                </article>
-            </li>
+            {% include "blog/includes/post.html" %}
         </ul>
     </section>
 

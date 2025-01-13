@@ -7,7 +7,7 @@ def startingPage(request):
     return render(request,'blog/index.html')
 
 def posts(request):
-    return HttpResponse("hii, this page contains all posts")
+        return render(request,'blog/all-posts.html')
 
 def postDetails(request, slug):
     return HttpResponse(f"Details for post: {slug}")
