@@ -1,0 +1,62 @@
+/* Base styles for the all-posts section */
+#all-posts {
+    max-width: 800px;
+    margin: 0 auto; /* Center align the section */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Section heading */
+#all-posts h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Unordered list styles */
+#all-posts ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual post container */
+#all-posts ul li {
+    background-color: #fff; /* White background for posts */
+    margin-bottom: 15px; /* Space between posts */
+    padding: 15px;
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hover effects */
+}
+
+/* Post hover effect */
+#all-posts ul li:hover {
+    transform: scale(1.02); /* Slight scaling */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+}
+
+/* Links inside posts */
+#all-posts ul li a {
+    text-decoration: none;
+    color: #007BFF; /* Bootstrap blue */
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+#all-posts ul li a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Adjust text inside posts */
+#all-posts ul li p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+}

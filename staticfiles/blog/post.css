@@ -1,0 +1,46 @@
+/* Latest Posts Section */
+section#latest-posts h2 {
+    text-align: center;
+    color: #4CAF50;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+section#latest-posts ul {
+    list-style: none;
+    padding: 0;
+}
+
+section#latest-posts .post {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+section#latest-posts .post:hover {
+    transform: scale(1.02);
+}
+
+section#latest-posts .post img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+section#latest-posts .post__content h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+section#latest-posts .post__content p {
+    font-size: 0.9rem;
+    color: #555;
+}

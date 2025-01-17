@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Page Title
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/post-detail.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+    <section id="post-info">
+    
+            <img src="{% static 'blog/images/coding.png' %}" alt="coding"/>
+            <h2>POST TITLE</h2>
+            <address>By deepthi</address>
+            <p>Posted on <time>july 10th</time></p>
+    </section>
+
+    <section id="details">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis nihil distinctio reprehenderit ullam expedita minus eaque nobis libero culpa iure exercitationem atque eligendi qui doloribus ratione nulla maiores est dicta.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat sint impedit nulla nihil quod libero voluptatem molestias laborum magni dolorum obcaecati rem eligendi, non neque mollitia similique sed. Laborum, debitis.
+        </p>
+    </section>
+{% endblock %}

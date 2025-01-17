@@ -1,0 +1,76 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 0;
+    margin: 0;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #222;
+}
+
+/* Containers */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+/* Header Styles */
+header#main-navigation {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+header#main-navigation h1 a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+header#main-navigation nav a {
+    margin: 0 10px;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+header#main-navigation nav a:hover {
+    text-decoration: underline;
+}
