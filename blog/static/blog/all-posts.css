@@ -1,24 +1,28 @@
 /* Base styles for the all-posts section */
 #all-posts {
-    max-width: 800px;
-    margin: 0 auto; /* Center align the section */
+    max-width: 900px; /* Slightly wider for better spacing */
+    margin: 20px auto;
     padding: 20px;
-    background-color: #f9f9f9; /* Light background color */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 /* Section heading */
 #all-posts h2 {
-    font-size: 1.8rem;
+    font-size: 2.2rem; /* Larger heading for emphasis */
     font-weight: 700;
     text-align: center;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-/* Unordered list styles */
+/* Post grid layout */
 #all-posts ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between posts */
     list-style: none; /* Remove default list styling */
     padding: 0;
     margin: 0;
@@ -26,37 +30,75 @@
 
 /* Individual post container */
 #all-posts ul li {
-    background-color: #fff; /* White background for posts */
-    margin-bottom: 15px; /* Space between posts */
-    padding: 15px;
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 5px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hover effects */
+    background-color: #ffffff; /* White background for posts */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensures content stays within bounds */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Post hover effect */
 #all-posts ul li:hover {
-    transform: scale(1.02); /* Slight scaling */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+    transform: translateY(-5px); /* Lift the post on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow */
 }
 
-/* Links inside posts */
+/* Post image styling */
+#all-posts ul li img {
+    width: 100%; /* Make image span the container width */
+    height: 180px; /* Fixed height for uniformity */
+    object-fit: cover; /* Crop image to fit container */
+    border-bottom: 1px solid #ddd; /* Separator between image and content */
+}
+
+/* Post content */
+#all-posts ul li .post-content {
+    padding: 15px; /* Space inside the card */
+}
+
+#all-posts ul li .post-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#all-posts ul li .post-content p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Link inside posts */
 #all-posts ul li a {
     text-decoration: none;
-    color: #007BFF; /* Bootstrap blue */
-    font-weight: 500;
-    transition: color 0.2s ease;
+    color: #007BFF;
+    font-weight: 600;
+    display: block;
+    margin-top: 10px;
+    transition: color 0.3s ease;
 }
 
 #all-posts ul li a:hover {
-    color: #0056b3; /* Darker blue on hover */
+    color: #0056b3;
 }
 
-/* Adjust text inside posts */
-#all-posts ul li p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.5;
-    margin: 0;
+/* Responsive design */
+@media (max-width: 768px) {
+    #all-posts {
+        padding: 15px;
+    }
+
+    #all-posts h2 {
+        font-size: 1.8rem;
+    }
+
+    #all-posts ul li img {
+        height: 150px; /* Adjust image size for smaller screens */
+    }
+
+    #all-posts ul li .post-content h3 {
+        font-size: 1.3rem;
+    }
 }

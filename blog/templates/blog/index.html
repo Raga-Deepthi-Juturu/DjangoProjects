@@ -12,21 +12,36 @@
 
 {% block content %}
 
+    <!-- Welcome Section -->
     <section id="welcome">
         <header>
-            <img src="{% static 'blog/images/Deepthi.jpeg' %}" alt="Deepthi - The author of this blog"/>
+            <img src="{% static 'blog/images/Deepthi.jpeg' %}" alt="Deepthi - The author of this blog" class="author-image"/>
             <h2>Welcome to Deepthi's Blog</h2>
         </header>
         <p>Hi, I am Deepthi, and I love to blog about my personal interests and the way our mind works.</p>
     </section>
     
+    <!-- Latest Posts Section -->
     <section id="latest-posts">
         <h2>My Latest Thoughts</h2>
-        <ul>
-            {% include "blog/includes/post.html" %}
-        </ul>
+        <div class="posts-grid">
+            {% for post1 in latestpost %}
+                <article class="post">
+                    <a href="{% url 'post-details' post1.slug %}" class="post-link">
+                        <div class="post-image-container">
+                            <img src="{% static 'blog/images/'|add:post1.image %}" alt="{{ post1.title }}" class="post-image"/>
+                        </div>
+                        <div class="post-content">
+                            <h3 class="post-title">{{ post1.title }}</h3>
+                            <p class="post-excerpt">{{ post1.excerpt }}</p>
+                        </div>
+                    </a>
+                </article>
+            {% endfor %}
+        </div>
     </section>
 
+    <!-- About Section -->
     <section id="about">
         <h2>What I Do</h2>
         <p>
@@ -36,4 +51,5 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat sint impedit nulla nihil quod libero voluptatem molestias laborum magni dolorum obcaecati rem eligendi, non neque mollitia similique sed. Laborum, debitis.
         </p>
     </section>
+
 {% endblock %}

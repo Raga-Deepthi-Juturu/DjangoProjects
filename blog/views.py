@@ -2,10 +2,10 @@ from datetime import date
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 
-all-posts = [
+postslist = [
     {
         "slug": "hike-in-the-mountains",
-        "image": "mountains.jpg",
+        "image": "meditation.png",
         "author": "Maximilian",
         "date": date(2021, 7, 21),
         "title": "Mountain Hiking",
@@ -26,7 +26,7 @@ all-posts = [
     },
     {
         "slug": "programming-is-fun",
-        "image": "coding.jpg",
+        "image": "coding.png",
         "author": "Maximilian",
         "date": date(2022, 3, 10),
         "title": "Programming Is Great!",
@@ -47,7 +47,7 @@ all-posts = [
     },
     {
         "slug": "into-the-woods",
-        "image": "woods.jpg",
+        "image": "woods.png",
         "author": "Maximilian",
         "date": date(2020, 8, 5),
         "title": "Nature At Its Best",
@@ -67,16 +67,24 @@ all-posts = [
         """
     }
 ]
-
+def get_date(post):
+    return post['date']
 # Create your views here.
 def startingPage(request):
-    return render(request,'blog/index.html')
+    sorted_posts = sorted(postslist,key = get_date)
+    latest_posts = sorted_posts[-3:][::-1]
+    return render(request,'blog/index.html', {
+        'latestpost' : latest_posts
+    })
 
 def posts(request):
-        return render(request,'blog/all-posts.html')
+        return render(request,'blog/all-posts.html',{
+            "allposts": postslist
+        })
 
 def postDetails(request, slug):
-    return HttpResponse(request, 'blog/post-detail.html',{'slug': 'yoga'})
-def postDetails(request, slug):
-    # Fetch the post by slug or return 404 if not found
-    return render(request, 'blog/post-detail.html')
+    identified_post = next( post for post in postslist if post['slug'] == slug)
+    return render(request, 'blog/post-detail.html',{
+        "post": identified_post
+    })
+

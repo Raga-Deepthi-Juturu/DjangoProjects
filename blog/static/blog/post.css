@@ -1,46 +1,75 @@
-/* Latest Posts Section */
-section#latest-posts h2 {
-    text-align: center;
-    color: #4CAF50;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-}
-
-section#latest-posts ul {
-    list-style: none;
-    padding: 0;
-}
-
-section#latest-posts .post {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+/* Post Styling */
+.post {
     background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
-section#latest-posts .post:hover {
-    transform: scale(1.02);
+.post:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-section#latest-posts .post img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-right: 15px;
+/* Link Styling */
+.post-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
 }
 
-section#latest-posts .post__content h3 {
-    font-size: 1.3rem;
+/* Post Image */
+.post-image-container {
+    width: 100%;
+    aspect-ratio: 1; /* Ensures the image is a perfect square */
+    overflow: hidden;
+}
+
+.post-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire container */
+    transition: transform 0.3s ease-in-out;
+}
+
+.post:hover .post-image {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Post Content */
+.post-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.post-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
     color: #333;
-    margin-bottom: 8px;
 }
 
-section#latest-posts .post__content p {
-    font-size: 0.9rem;
-    color: #555;
+.post-excerpt {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .post {
+        margin: 10px 0; /* Adds more spacing for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .post {
+        margin: 15px 0; /* Additional spacing for very small screens */
+    }
 }

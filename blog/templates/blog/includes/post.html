@@ -1,12 +1,15 @@
 {% load static %}
-<li>
+
+<li class="post-item">
     <article class="post">
-        <a href="{% url 'post-details' 'yoga-page' %}">
-            <img src="{% static 'blog/images/yoga.png' %}" alt="Yoga"/>
-            <div class="post__content">
-                <h3>Yoga</h3>
-                <p>Yoga is a very important activity to include in our daily lives to keep our body and mind healthy and active.</p>
+        <a href="{% url 'post-details' post1.slug %}" class="post-link">
+            <div class="post-image-container">
+                <img src="{% static 'blog/images/'|add:post1.image %}" alt="{{ post1.title }}" class="post-image"/>
             </div>
-        </a>       
+            <div class="post-content">
+                <h3 class="post-title">{{ post1.title }}</h3>
+                <p class="post-excerpt">{{ post1.excerpt }}</p>
+            </div>
+        </a>
     </article>
 </li>
